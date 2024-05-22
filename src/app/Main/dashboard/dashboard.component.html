@@ -1,0 +1,169 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
+    <div class="relative flex-0 overflow-hidden dark h-30" style="background-image: url('assets/images/avatars/bgGraph.jpg'); background-size: cover !important; background-position: center !important; backdrop-filter: blur(10px) !important; opacity: 0.9 !important;">
+        
+        <svg class="absolute inset-0 pointer-events-none"
+             viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            
+        </svg>
+        <!-- @formatter:on -->
+        
+        <div class="z-10 relative flex flex-col items-center" style="display: flex;
+        align-items: center;
+        justify-content: center;">
+        
+            
+            <div class="mt-8 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center glow-and-shadow">
+                ROBRO   
+            </div>
+            
+        </div>
+    
+            </div>
+    
+    
+    
+
+    
+
+   <div *ngIf="isUserAdmin" class="mt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full min-w-0 ng-star-inserted">
+        
+            <div class="flex flex-col ml-2  mt-2 flex-auto items-center bg-card shadow rounded-2xl overflow-hidden ng-star-inserted">
+                <div class="flex flex-col flex-auto w-full text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden"><img class="w-full h-full mt-1 object-cover"
+                            src="assets/images/avatars/user1.png"></div>
+                    <div class="mt-6 font-medium">User</div>
+                    <div class="text-secondary">Page Used To Create Users.</div>
+                </div>
+                <div class=" items-center w-full border-t divide-x">
+                
+                    <div class="px-6 py-4 text-right bg-gray-50 dark:bg-transparent">
+                        <a mat-stroked-button="" mat-ripple-loader-class-name="mat-mdc-button-ripple" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-unthemed mat-mdc-button-base" routerLink="/app-user" aria-disabled="false">
+                        <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                        <span class="mdc-button__label">
+                            <span class="inline-flex items-center">
+                            <!---->
+                            <span (click)="redirectToUserPage()" mat-mdc-button-touch-target>Go</span>
+                            <!---->
+                            <!---->
+                            <mat-icon role="img" class="mat-icon notranslate ml-1.5 icon-size-5 mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="arrow-small-right" data-mat-icon-namespace="heroicons_solid">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                                <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd"></path>
+                                </svg>
+                            </mat-icon>
+                            </span>
+                        </span>
+                        <span class="mat-mdc-focus-indicator"></span>
+                        <span class="mat-mdc-button-touch-target"></span>
+                        <span class="mat-ripple mat-mdc-button-ripple"></span>
+                        </a>
+                    </div>
+                    </div>
+            </div><!---->
+        <div class="flex flex-col mt-2 flex-auto items-center bg-card shadow rounded-2xl overflow-hidden ng-star-inserted">
+            <div class="flex flex-col flex-auto w-full text-center">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden"><img class="w-full h-full object-cover"
+                        src="assets/images/avatars/imagepng3.png"></div>
+                <div class="mt-6 font-medium">Image Capture App</div>
+                <div class="text-secondary">Used To Capture Images.</div>
+            </div>
+            <div class=" items-center w-full border-t divide-x">
+               
+                <div class="px-6 py-4 text-right bg-gray-50 dark:bg-transparent">
+                    <a mat-stroked-button="" mat-ripple-loader-class-name="mat-mdc-button-ripple" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-unthemed mat-mdc-button-base" routerLink="/app-imagecapture" aria-disabled="false">
+                      <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                      <span class="mdc-button__label">
+                        <span class="inline-flex items-center">
+                          <!---->
+                          <span (click)="redirectToImageCapture()" mat-mdc-button-touch-target>Go</span>
+                          <!---->
+                          <!---->
+                          <mat-icon role="img" class="mat-icon notranslate ml-1.5 icon-size-5 mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="arrow-small-right" data-mat-icon-namespace="heroicons_solid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                              <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd"></path>
+                            </svg>
+                          </mat-icon>
+                        </span>
+                      </span>
+                      <span class="mat-mdc-focus-indicator"></span>
+                      <span class="mat-mdc-button-touch-target"></span>
+                      <span class="mat-ripple mat-mdc-button-ripple"></span>
+                    </a>
+                  </div>
+                </div>
+        </div><!---->
+        <div class="flex flex-col mt-2 flex-auto items-center bg-card shadow rounded-2xl overflow-hidden ng-star-inserted card">
+            <div class="flex flex-col flex-auto w-full text-center">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden"><img class="w-full h-full object-cover"
+                        src="assets/images/avatars/ACRNEW1.png"></div>
+                <div class="mt-6 font-medium">Sample Component One</div>
+                <div class="text-secondary">Sample Component One.</div>
+            </div>
+            <div class=" items-center w-full border-t divide-x">
+               
+                <div class="px-6 py-4 text-right bg-gray-50 dark:bg-transparent">
+                    <a mat-stroked-button="" mat-ripple-loader-class-name="mat-mdc-button-ripple" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-unthemed mat-mdc-button-base" routerLink="/app-sampleone" aria-disabled="false">
+                      <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                      <span class="mdc-button__label">
+                        <span class="inline-flex items-center">
+                          <!---->
+                          <span  mat-mdc-button-touch-target>Go</span>
+                          <!---->
+                          <!---->
+                          <mat-icon role="img" class="mat-icon notranslate ml-1.5 icon-size-5 mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="arrow-small-right" data-mat-icon-namespace="heroicons_solid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                              <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd"></path>
+                            </svg>
+                          </mat-icon>
+                        </span>
+                      </span>
+                      <span class="mat-mdc-focus-indicator"></span>
+                      <span class="mat-mdc-button-touch-target"></span>
+                      <span class="mat-ripple mat-mdc-button-ripple"></span>
+                    </a>
+                  </div>
+                </div>
+        </div>
+        <div class="flex flex-col mt-2 mr-2 flex-auto items-center bg-card shadow rounded-2xl overflow-hidden ng-star-inserted card">
+            <div class="flex flex-col flex-auto w-full text-center">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden"><img class="w-full h-full object-cover"
+                        src="assets/images/avatars/truck.png"></div>
+                <div class="mt-6 font-medium">Sample Component Two</div>
+                <div class="text-secondary">Sample Component Two.</div>
+            </div>
+            <div class=" items-center w-full border-t divide-x">
+               
+                <div class="px-6 py-4 text-right bg-gray-50 dark:bg-transparent">
+                    <a mat-stroked-button="" mat-ripple-loader-class-name="mat-mdc-button-ripple" class="mdc-button mdc-button--outlined mat-mdc-outlined-button mat-unthemed mat-mdc-button-base" routerLink="/app-sampletwo" aria-disabled="false">
+                      <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span>
+                      <span class="mdc-button__label">
+                        <span class="inline-flex items-center">
+                          <!---->
+                          <span  mat-mdc-button-touch-target>Go</span>
+                          <!---->
+                          <!---->
+                          <mat-icon role="img" class="mat-icon notranslate ml-1.5 icon-size-5 mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="arrow-small-right" data-mat-icon-namespace="heroicons_solid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+                              <path fill-rule="evenodd" d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd"></path>
+                            </svg>
+                          </mat-icon>
+                        </span>
+                      </span>
+                      <span class="mat-mdc-focus-indicator"></span>
+                      <span class="mat-mdc-button-touch-target"></span>
+                      <span class="mat-ripple mat-mdc-button-ripple"></span>
+                    </a>
+                  </div>
+                </div>
+        </div><!---->
+        
+
+
+      
+    </div>
+   </div>
+    </div>
+
+
+    
+

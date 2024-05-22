@@ -1,0 +1,101 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+
+.mat-mdc-table .mdc-data-table__header-row {
+    height: 35px !important;
+}
+
+
+ .mat-mdc-table .mdc-data-table__row {
+    height: 1rem !important;
+}
+
+.fuse-vertical-navigation.fuse-vertical-navigation-appearance-thin .fuse-vertical-navigation-aside-wrapper{
+    width: 20px !important;
+}
+
+
+.btn-colorAdd {
+    background-color: #318CE7 !important;
+    color: #fff !important;
+    // border: 2px solid #4e4e4e !important;
+    border-radius: 5px !important;
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    height: 37px !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+}
+.mat-mdc-select {
+    display: inline-block;
+    width: 100% !important;
+    outline: none !important;
+    padding-top: 4px !important;
+}
+
+.btn-no-border-R{
+    border-radius: 5px !important;
+    font-size: 12px;
+    padding: 8px 12px !important;
+}
+
+.mat-mdc-tab-group .mat-mdc-tab-body-content {
+    padding: 13px !important;
+}
+
+.mat-mdc-tab.mdc-tab {
+    height: 30px !important;
+    // flex-grow: 0;
+}
+
+.table-header{
+    white-space: nowrap;
+}
+
+::ng-deep .layout router-outlet + * {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    justify-content: center  !important;
+}
+
+
+::ng-deep .mat-mdc-table .mdc-data-table__row {
+    height: 1rem !important;
+}
+
+
+.mat-mdc-text-field-wrapper {
+    // height: auto;
+    flex: auto;
+    height: 37px !important;
+}
+html, body { height: 100%; }
+body {
+     margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif; 
+     overflow: hidden !important;
+    }
+
+    .grayClass{
+        background-color: #5a5a5a!important;
+        color: #fff  !important;
+    }
+    
+    .RedClass{
+        background-color:#E32636 !important;
+        color: #fff !important;
+    }
+    
+    .orangeClass{
+        background: #FF8C00;
+        color: #fff;
+    }
+    

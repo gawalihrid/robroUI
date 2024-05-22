@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body class="h-0 w-screen">
+
+    <div style="position: relative;">
+        <div style="
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-image: url('assets/images/loginBackground.jpg'); 
+        background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 1;
+        "></div>
+        <div class="container">
+            <div class="screen h-auto mb-10">
+                <div class="screen__content">
+                    <div style="display: flex; justify-content: center;background: linear-gradient(90deg, #d6d6d6, black);">
+                        <img style="width:200px" src="assets/images/logo/robroLogo.png" alt="">
+                    </div>
+                    <form class="login" [formGroup]="loginForm" >
+                        <div class="login__field">
+                            <i class="login__icon fas fa-user"></i>
+                            <input type="text" class="login__input" formControlName="email" placeholder="User name / Email">
+                        </div>
+                        <div class="login__field">
+                            <i class="login__icon fas fa-lock"></i>
+                            <input [type]="passwordVisible ? 'text' : 'password'" class="login__input" formControlName="password" placeholder="Password">
+                            
+                        </div>
+                        <label for="showPassword" style="font-weight: 600;">
+                            <input type="checkbox" id="showPassword"  (change)="togglePasswordVisibility($event.target)">
+                            Show Password
+                        </label>
+                        <button type="submit" class="button login__submit" (click)="login()" >
+                            <span class="button__text">Log In </span>
+                            <i class="button__icon fas fa-chevron-right"></i>
+                        </button>
+                    </form>
+                    
+                    
+                    
+                    <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+                    
+                </div>
+                <div class="screen__background">
+                    <span class="screen_background_shape screen_background_shape4"></span>
+                    <span class="screen_background_shape screen_background_shape3"></span>
+                    <span class="screen_background_shape screen_background_shape2"></span>
+                    <span class="screen_background_shape screen_background_shape1"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    
+</body>
+</html>

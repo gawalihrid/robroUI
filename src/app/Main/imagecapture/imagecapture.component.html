@@ -1,0 +1,151 @@
+<div class="flex flex-col h-screen  w-full">
+<div
+        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-4 sm:py-2 sm:px-2 border-b bg-card h-16 :bg-transparent">
+        <div class="flex-1 ">
+            
+            <div>
+                <div class="flex items-center">
+                    <h2
+                        class="text-2xl font-semibold tracking-tight leading-7 md:leading-snug truncate ng-star-inserted">
+                        Image Capture App
+                    </h2>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div>
+            <div *ngIf="addCancelButtonFlag" class="my-3 mr-4 flex justify-end" style="font-size: 17px;">
+                <!-- <button id="btnAudit" name="btnAudit"  (click)="confirmAuditDialog(AuditLog)"
+                mat-raised-button class="btn-colorAdd mr-4"> <mat-icon
+                    [svgIcon]="'heroicons_outline:link'"></mat-icon>Audit Logs</button> -->
+                
+                <button id="btnAdd" name="btnAdd" (click)="matDrawer.toggle(isDrawer('open'))" mat-raised-button
+                    class="btn-colorAdd"> <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>Add Images</button>
+            </div>
+            
+            <div *ngIf="!addCancelButtonFlag" class="flex items-center justify-end border-t px-8 py-5 ">
+                <button (click)="saveImages()"x id="btnSave" name="btnSave" style="background-color: #47CC5B;"
+                    class=" text-black  mr-2 btn-no-border-R w-1/2"
+                     mat-raised-button><mat-icon class="icon-size-4" 
+                        svgIcon="heroicons_solid:save"></mat-icon>Submit</button>
+
+
+
+                <button class="btn-no-border-R  mr-2  w-1/2" id="btnCancel" name="btnCancel"
+                    style="background: #cc2d35;color: #fff;" mat-raised-button (click)="clearImages()"><mat-icon
+                        class="pr-2 " svgIcon="mat_outline:cancel"></mat-icon>Clear</button>
+                <button class="btn-no-border-R  w-1/2" id="btnCancel" name="btnCancel"
+                        style="background: #58595b;color: #fff;" mat-raised-button (click)="closeDrawer()"><mat-icon
+                            class="pr-2 " svgIcon="mat_outline:cancel"></mat-icon>Cancle</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <mat-drawer-container class="flex-auto ">
+        <mat-drawer-content>
+            <div class="xl:col-span-2 flex flex-col flex-auto bg-card shadow rounded-2xl m-2  overflow-hidden">
+            <div class="overflow-x-auto mx-2 ">
+                <table class="w-full bg-transparent mt-2" matSort mat-table [dataSource]="dataSource"
+                    >
+                    <ng-container matColumnDef="Description">
+                        <th mat-header-cell *matHeaderCellDef class="left-heading table-header"
+                            style="    background: #0877d4; color:#fff">
+                            Description
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            <span class="pr-6 whitespace-nowrap">
+                                {{element.description}}
+                            </span>
+                        </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="Images">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef class="left-heading table-header"
+                            style="    background: #0877d4; color:#fff">
+                            Images
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            <ul class="small-list-table">
+                                <li *ngFor="let src of element.image_data; let idx = index" (click)="setPhoto(idx)">
+                                    <img [src]="src" height="10" />
+                                </li>
+                            </ul>
+                        </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="CreatedDate">
+                        <th mat-header-cell mat-sort-header class="left-heading table-header" *matHeaderCellDef
+                            style="background: #0877d4; color:#fff ">
+                            Created Date
+                        </th>
+
+                        <td class="pr-6  whitespace-nowrap left-heading" mat-cell *matCellDef="let element">
+                            <ng-container class="pr-6 font-medium whitespace-nowrap"
+                                *ngIf="element.created_at; else noModDate">
+                                {{element.created_at | date:'mediumDate'}}
+                            </ng-container>
+                            <ng-template #noModDate>-</ng-template>
+                        </td>
+                    </ng-container>      
+                 
+
+                    <tr mat-header-row *matHeaderRowDef="imageCaptureHeader"></tr>
+                    <tr class="order-row h-16" mat-row
+                        *matRowDef="let row; columns: imageCaptureHeader;">
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        </mat-drawer-content>
+
+        <mat-drawer class="dark:bg-gray-900 custom-width-drawer" [position]="'end'" [disableClose]="true" #matDrawer>
+            <div style="height: 100vh; overflow: auto;">
+                <mat-card>
+                    <mat-card-header style="position:relative;">
+                       
+                        <mat-card-subtitle>This Page is Dedicated for Image Capture</mat-card-subtitle>
+                    </mat-card-header>
+                    <div class="flex gt-xs:flex-row  w-full mr-2 p-5">
+                        <mat-form-field appearance="outline" class="flex-auto ">
+                            <mat-label>Description</mat-label>
+                            <input [(ngModel)]="description" matInput type="text" placeholder="Description" >
+                            <mat-icon matSuffix class="mb-2" [svgIcon]="'description'"></mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="flex-container">
+                        
+                        <div class="video-container" *ngIf="!error">
+                            <video [class.show]="!isCaptured" [class.hide]="isCaptured" #video id="video" [width]="WIDTH"
+                                [height]="HEIGHT" autoplay></video>
+                            <canvas [class.show]="isCaptured" [class.hide]="!isCaptured" #canvas id="canvas" [width]="WIDTH"
+                                [height]="HEIGHT"></canvas>
+                        </div>
+            
+                        <div class="snap-container">
+                            <button mat-flat-button color="primary" *ngIf="!isCaptured" (click)="capture()">Snap Photo</button>
+                            <button mat-flat-button color="warn" *ngIf="isCaptured" (click)="removeCurrent()">Take Another</button>
+                           
+                            <mat-error *ngIf="error">
+                                {{ error }}. Please click refresh,Allow permission to Camera
+                            </mat-error>
+                        </div>
+                        <div>
+                            <ul class="small-list">
+                                <li *ngFor="let src of captures; let idx = index" (click)="setPhoto(idx)">
+                                    <img [src]="src" height="10" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </mat-card>
+            </div>
+        </mat-drawer>
+    </mat-drawer-container>
+</div>
